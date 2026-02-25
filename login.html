@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in | Netlify</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body class="login-body">
+    <div class="login-split">
+
+        <!-- Left Side: Login Actions -->
+        <div class="login-left">
+            <div class="login-logo">
+                <a href="index.html">
+                    <img src="netlify-logo.svg" alt="Netlify Logo">
+                </a>
+            </div>
+
+            <h1>Log in</h1>
+
+            <div class="auth-buttons">
+                <!-- Using a standard Google logo SVG from CDN -->
+                <a href="#" class="btn-auth" id="google-login-btn">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                        alt="Google">
+                    Log in with Google
+                </a>
+                <a href="#" class="btn-auth">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                        alt="GitHub" style="filter: invert(1);">
+                    Log in with GitHub
+                </a>
+                <a href="#" class="btn-auth">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
+                        alt="GitLab">
+                    Log in with GitLab
+                </a>
+                <a href="#" class="btn-auth">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg"
+                        alt="Bitbucket">
+                    Log in with Bitbucket
+                </a>
+            </div>
+
+            <div class="auth-links">
+                <a href="#">Log in with email</a>
+                <a href="#">Log in with SSO</a>
+            </div>
+
+            <div class="auth-signup">
+                <span>No account yet?</span>
+                <a href="#">Sign up</a>
+            </div>
+        </div>
+
+        <!-- Right Side: Features List -->
+        <div class="login-right">
+            <div class="login-features">
+
+                <!-- Feature 1 -->
+                <div class="login-feature">
+                    <div class="feature-icon">🚀</div>
+                    <div class="feature-text">
+                        <h3>Publish on the web instantly</h3>
+                        <p>We simplify deploying on the web so <strong>anyone</strong> can do it: drag and drop your
+                            project's files, import a Git repository, or use our API or CLI.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="login-feature">
+                    <div class="feature-icon">⚙️</div>
+                    <div class="feature-text">
+                        <h3>Make it yours</h3>
+                        <p>Customize with your own domain, forms, password protection, and more. Build experiences with
+                            your favorite AI agent using Agent Runners.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="login-feature">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-text">
+                        <h3>Iterate and grow</h3>
+                        <p>Share Deploy Previews for feedback. We have you covered as you grow with observability,
+                            security, support, and more.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+        // TODO: Replace with your app's Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        const googleLoginBtn = document.getElementById("google-login-btn");
+
+        googleLoginBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Check if user has updated config
+            if (firebaseConfig.apiKey === "YOUR_API_KEY") {
+                alert("Firebase configuration is missing! Please add your Firebase configuration details in login.html to test authentication.");
+                return;
+            }
+
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const user = result.user;
+                    console.log("Logged in as:", user.displayName);
+                    // Redirect to home page on success
+                    window.location.href = "index.html";
+                }).catch((error) => {
+                    console.error("Login failed:", error.message);
+                    alert("Error logging in: " + error.message);
+                });
+        });
+    </script>
+</body>
+
+</html>

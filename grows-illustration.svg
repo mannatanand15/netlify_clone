@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+    <g stroke="#20C6B7" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+        <!-- Top Cloud -->
+        <path d="M260,80 Q270,50 300,50 Q330,50 340,70 Q360,65 380,80 Q400,95 380,110 L260,110 Q240,110 240,90 Q240,75 260,80 Z"/>
+        <!-- Top Cloud Inner Detail -->
+        <path d="M255,95 Q265,85 275,90" />
+        
+        <!-- Birds Top Right -->
+        <path d="M350,55 Q355,50 360,55 Q365,50 370,55" stroke-width="2"/>
+        <path d="M385,65 Q390,60 395,65 Q400,60 405,65" stroke-width="2"/>
+
+        <!-- Bottom Cloud -->
+        <path d="M100,310 Q110,290 130,290 Q150,290 155,305 Q170,300 185,310 Q200,325 185,335 L90,335 Q70,335 70,315 Q70,300 100,310 Z"/>
+        <path d="M140,280 Q145,270 155,280 Q165,270 175,280" stroke-width="2"/> <!-- Bird near bottom cloud -->
+
+        <!-- Left Gauge (Clock/Arrow) -->
+        <circle cx="180" cy="170" r="90" />
+        
+        <!-- Left Gauge Ticks -->
+        <line x1="180" y1="95" x2="180" y2="105" />
+        <line x1="180" y1="245" x2="180" y2="235" />
+        <line x1="105" y1="170" x2="95" y2="170" />
+        
+        <path d="M125,115 L132,122" />
+        <path d="M235,115 L228,122" />
+        <path d="M125,225 L132,218" />
+        <path d="M235,225 L228,218" />
+        
+        <path d="M100,140 L108,145" />
+        <path d="M100,200 L108,195" />
+        
+        <!-- Center arrow circle -->
+        <circle cx="180" cy="170" r="12" />
+        <circle cx="180" cy="170" r="3" fill="#20C6B7" />
+        
+        <!-- Curved Arrow -->
+        <path d="M130,170 A 50 50 0 0 1 230 140" />
+        <!-- Arrowhead -->
+        <polyline points="120,155 130,170 145,160" />
+
+        <!-- Right Gauge (Speedometer) Overlapping -->
+        <!-- Dark fill so it hides the lines behind it -->
+        <circle cx="310" cy="240" r="110" fill="#112027" />
+        <circle cx="310" cy="240" r="100" />
+        
+        <!-- Right Gauge Ticks -->
+        <line x1="310" y1="155" x2="310" y2="175" />
+        <line x1="225" y1="240" x2="245" y2="240" />
+        <line x1="395" y1="240" x2="375" y2="240" />
+        <line x1="250" y1="180" x2="265" y2="195" />
+        <line x1="370" y1="180" x2="355" y2="195" />
+        
+        <!-- Speedometer Needle -->
+        <!-- Needle triangle pointing top right -->
+        <polygon points="310,265 295,250 375,190" fill="#112027" />
+        
+    </g>
+</svg>
