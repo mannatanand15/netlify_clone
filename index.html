@@ -31,6 +31,25 @@
                     <img src="netlify-logo.svg" alt="Netlify Logo" class="nav-logo">
                 </a>
             </div>
+            <!-- Mobile Toggle -->
+            <div class="mobile-nav-toggle">
+                <!-- Mobile Search Icon -->
+                <a href="#" class="mobile-search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+                <a href="login.html" class="mobile-login-btn">Log in</a>
+                <!-- Hamburger Icon -->
+                <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+
             <ul class="nav-links">
                 <li class="dropdown mega-dropdown">
                     <a href="#platform">Platform &#9662;</a>
@@ -161,6 +180,64 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Full-screen Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-accordion">
+                <!-- Platform -->
+                <div class="mobile-accordion-item">
+                    <button class="mobile-accordion-header">
+                        Platform <span class="chevron">&#9662;</span>
+                    </button>
+                    <div class="mobile-accordion-body">
+                        <a href="#">Deploy Previews</a>
+                        <a href="#">AI Gateway</a>
+                        <a href="#">Functions</a>
+                    </div>
+                </div>
+                <!-- Solutions -->
+                <div class="mobile-accordion-item">
+                    <button class="mobile-accordion-header">
+                        Solutions <span class="chevron">&#9662;</span>
+                    </button>
+                    <div class="mobile-accordion-body">
+                        <a href="#">Customers</a>
+                        <a href="#">Use Cases</a>
+                    </div>
+                </div>
+                <!-- Developers -->
+                <div class="mobile-accordion-item">
+                    <button class="mobile-accordion-header">
+                        Developers <span class="chevron">&#9662;</span>
+                    </button>
+                    <div class="mobile-accordion-body">
+                        <a href="#">Docs</a>
+                        <a href="#">Integrations</a>
+                    </div>
+                </div>
+                <!-- Resources -->
+                <div class="mobile-accordion-item">
+                    <button class="mobile-accordion-header">
+                        Resources <span class="chevron">&#9662;</span>
+                    </button>
+                    <div class="mobile-accordion-body">
+                        <a href="#blog">Blog</a>
+                        <a href="#guides">Guides</a>
+                    </div>
+                </div>
+                <!-- Pricing & Contact -->
+                <a href="#pricing" class="mobile-nav-link">Pricing</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+            </div>
+
+            <!-- Fixed Bottom CTA inside mobile menu -->
+            <div class="mobile-bottom-cta">
+                <a href="login.html" class="btn btn-primary btn-mobile-signup">Sign up</a>
+                <button class="btn btn-primary btn-ask-netlify"><span class="bot-icon">🤖</span> Ask Netlify</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <header id="home" class="hero">
